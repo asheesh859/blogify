@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head')%>
+        <title>Document</title>
+        <!-- <style>
+            @media screen and (min-width: 375px) {
+               .container {
+                flex-wrap: wrap;
+  }
+}
+        </style> -->
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <%- include('./partials/script')%>
+            <div class="container mt-3" style="display: flex;">
+
+                <% blogs.forEach(blog=> { %>
+
+
+                    <div class="card mb-2 mx-2" style="width: 18rem">
+                        <img height="150px" src="<%= blog.coverImageURL%>" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= blog.title %>
+                            </h5>
+                            <a href="/blog/<%= blog._id %>" class="btn btn-primary">view More</a>
+                        </div>
+
+                    </div>
+                    <% }) %>
+
+            </div>
+
+</body>
+
+</html>
